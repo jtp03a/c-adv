@@ -1,1 +1,23 @@
+Storage Classes
+  describe the scope, visibility, and life-time of a variable
+  
+  life-time - period variable exists in computer memory
+  scope - where variable can be ref in program
+  visibility - for multi-file programs desc how variable can be shared/seen between files 
 
+C provides 4 storage classes
+  auto
+  register
+  extern
+  static
+
+Auto Variables
+  automatic storage duration
+  local variables declared in func body or block of code
+  all local var have auto storage dur by default
+  auto created when func is called, val local to func
+  val of local var can only be accessed by func in which it was defined
+  C compiler assumes any var defined inside a func is a auto local var
+  keyword auto seldom used
+  
+External Variables
