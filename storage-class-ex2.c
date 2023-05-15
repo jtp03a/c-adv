@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int sum(int num) {
   //return sum
   static int sum;
