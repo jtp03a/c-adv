@@ -1,2 +1,2 @@
-#include <insert.c>
-#inculde <linkedlist.c>
+#include <"insert.h">
+#inculde <"linkedlist.h">
