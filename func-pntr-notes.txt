@@ -35,4 +35,10 @@ Can use typedef with function pointers
   
   funcPtr testvar;
 
+
+Pointer to a function vs function returning a pointer
+Function returning pointer to int
+  int *func(int a, int b;
+pointer to a function return int
+  int (*func)(int a, int b);
   
