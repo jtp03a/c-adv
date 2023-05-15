@@ -4,6 +4,8 @@ Storage Classes
   life-time - period variable exists in computer memory
   scope - where variable can be ref in program
   visibility - for multi-file programs desc how variable can be shared/seen between files 
+  
+  C does not allow use of multiple storage classes
 
 C provides 4 storage classes
   auto
@@ -65,6 +67,18 @@ Static variables
     dont use static vars in structs
     C compiler req that structure memory alloc be contiguous
     can have a static struct but no static members
+    
+Register
+  processor register - small set of data holding places that are part of CPU
+  register storage class is used to define local var that should be stored in CPU register instead of RAM
+  makes use of register var much faster that var stored in RAM during runtime
+  MIGHT be stored in register, up to compiler, dep on hardware
+  local vars and param can be declared as register
+  lifetime is same as local
+  max size equal to reg size
+  cannot obtain address with &
+  
+  register int x;
     
     
     
