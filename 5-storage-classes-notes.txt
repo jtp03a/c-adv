@@ -21,3 +21,19 @@ Auto Variables
   keyword auto seldom used
   
 External Variables
+  tells that var defined elsewhere - not whithin same block as used
+  global var
+  main purpose - vars can be access between two diff files
+  ref to global var that is visible to all program files
+  in general global vars are not good program design practice
+  
+  how to use:
+    declare  and initialize a variable in a module outside any function (global)
+    
+    int num = 0;
+    
+    in another file file use extern keyword
+    
+    extern int num;
+  
+    
