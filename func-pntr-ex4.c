@@ -11,6 +11,7 @@ int subtractOp(int a, int b) { return ( a - b); }
 int multiplyOp(int a, int b) { return ( a * b); }
 int divideOp(int a, int b) { return ( a / b ); }
 
+
 typedef int (*OpFuncPtr)(int, int); 
 
 int main (){
@@ -21,6 +22,9 @@ int main (){
     OpFuncPtr multiplyFuncPtr = multiplyOp;
     OpFuncPtr divideFuncPtr = divideOp;
     
+    performOp(5, 5, addFuncPtr);
+    
+    /**
     while (running) {
         int choice;
         
@@ -34,6 +38,11 @@ int main (){
         
         printf("You selected %d\n", choice);
     }
+    **/
     
     return 0;
+}
+
+int performOp(int a, int b, OpFuncPtr operation) {
+    printf("%d\n", operation(a, b));
 }
