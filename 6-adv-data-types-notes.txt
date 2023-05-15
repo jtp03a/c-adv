@@ -1,1 +1,46 @@
+#define
+  preprocessor directive
+  defines symbolic or manifest constants
+  limited to one line in length
+  runs before compiler
+  typically appear first in program, grouped in beg
+  by convention uses upper case letters
+  no equal sign, no semicolon
+  define is not a variable
+  cant assign a value to it later
+  can be an expression #define TWO_PI 2.0*3.14
+  NULL is really #define NULL 0 in stddef.h
+  makes programs more readable and extendable and portability
+  
+  #define YES 1
+  #define MAX_ARR_SIZE 1000
+  
+  float dataValues[MAX_ARR_SIZE];
+  
+  when to use define vs constant?
+    const float Pi = 3.14 - a constant numerical value with a specified type - data type checking
+    #define PI 3.14 - a sequence of characarters that reqplaces all occurences of PI in code - no data type checking
 
+typedef
+  create your own name for a existing data type
+  
+  typedef int Counter; - Counter is not equivalent to data type int
+  
+  can declar vars as type Counter
+  
+  Counter j, n;
+  
+  typedef int* i_pointer;
+  
+  i_pointer p; //same as int*p
+  i_pointer a, *b // same as int*a, **b;
+  i_pointer myArray[10]; // same as int *myArray[10]
+  
+  Advantages:
+    readability - clear what it does
+    maintainability - only have to change definition in one place, reduce manual changes
+    portability - synonyms for basic data types
+    
+    typedef vs define
+      #define Counter int //same result as typedef int Counter
+      typedef handled by compiler so takes adv of type checking
