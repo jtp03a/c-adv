@@ -1,0 +1,26 @@
+3 Forms of memeory 
+  -static
+    persistes through entire life of program
+  -stack
+    temporary variables
+    usually variables inside of a function
+    LIFO - last in first out data structure
+    no need to manage
+    limit on size - stack overflow
+    divided into frames
+    when func exits all of its variables are popped off the stack
+    commom bug - acesss a variable that was created in a func
+    use when
+      dealing with small variables that only needed when a func is alive
+  -heap
+    hierarchical data structure
+    not auto managed
+    accessed through use of pointers
+    have to explicitily allocate and deallocate the memory
+    failure to free will result in memory leaks
+    restriction on size is the physical size of memory
+    variables created on heap are accessible anywhere in program
+    use when
+      allocate a large block of memory
+      keep variable around a long time
+      need variables that can change in size dynamically
