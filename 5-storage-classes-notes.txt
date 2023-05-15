@@ -35,5 +35,13 @@ External Variables
     in another file file use extern keyword
     
     extern int num;
+    
+  extern functions can be defined
+    can use func in another file without declaring in a header file
+    
+    put extern in front of function prototype to declar that the func is in another file
+    
+Static variables
+  
   
     
