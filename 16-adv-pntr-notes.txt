@@ -1,4 +1,31 @@
 Double Pointers - pointer to pointer
+  When a pointer holds the memory address of another pointer
+  a pointer points to a location in memory and thus used to store the address of variables
+  with double pointer, the pointer contains the address of the second pointer, which points to the location that contains the actual value
+  Syntax
+    place an additional astrix
+    int **var;
+    
+    defrence
+    int x = **var;
+    
+    Examples
+    int a = 10;
+    
+    int *p1 = NULL;
+    int **p2 = NULL;
+    
+    p1 = &a;
+    p2 = &p1;
+    
+  Why? - Use cases
+    Change the value of the pointer passed to a function as the function argument - simulates C++ pass by reference
+      when you pass a pointer to a function it is a pass by copy of the pointer. The parameter point is pointing to the same thing but the pointer itself has a different address
+      if you pass a single pointer as an arguement you will be modifying local copies of the pointer not the original pointer in the calling scope
+      with pointer to a pointer you modify the original pointer
+      use a double pointer as an argument to a function when you want to preserve the memory-allocation or assignment even outside of the function
+      
+  
   
 Function Pointers
 
