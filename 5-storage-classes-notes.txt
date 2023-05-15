@@ -42,6 +42,29 @@ External Variables
     put extern in front of function prototype to declar that the func is in another file
     
 Static variables
+  when applied to local var instructs compiler to keep the var for lifetime of program
+  when applied to global var instructs compiler to keep var scoped to file in which it was declared
+  when applied to funcs func can only be called in same file
   
+  local vars
+    var val preserved in scope
+    retain val between func call
+    scope still local to func in which defined
+    static var have default initial val of 0 unlike auto var with have no default init value
+    static var are allocated on heap not stack
+    must be a initialized using a constant value
+    
+  global vars
+    if you need to define a global var whose val does not have to be accessed from another file use static
+    
+  functions
+    extern is the default for functions
+    static makes it usable only in same file
   
+  structures
+    dont use static vars in structs
+    C compiler req that structure memory alloc be contiguous
+    can have a static struct but no static members
+    
+    
     
