@@ -1,4 +1,6 @@
+#include <stdio.h>
+
 void display() {
-  extern counter;
+  extern int counter;
   printf("%d ", counter);
 }
