@@ -50,5 +50,7 @@ Linking
     Static Libraries
       use static linking
       also known as archive
-      *.a
+      *.a, *.lib
       each process gets its own copy of the code and data
+      
+      Id libraries from looking at the header files
