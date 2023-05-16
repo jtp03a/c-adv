@@ -40,7 +40,7 @@ int main (){
         scanf("%d", &choice);
         
         if(choice < 1 || choice > 5) {
-            printf("ERROR: INVALID SELECTION");
+            printf("ERROR: INVALID SELECTION\n");
             continue;
         }
         
