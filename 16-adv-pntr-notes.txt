@@ -28,5 +28,63 @@ Double Pointers - pointer to pointer
   
   
 Function Pointers
+  Can use pointers to point to functions
+  pointers to functions can be
+    passed to functions
+    returned from functions
+    stored in arrays
+    assigned to other function pointers
+
+  Use Cases
+    - An argument to another function telling the second function which function to use
+    - sorting an array involving comparing two elements to see which comes first, Clibrary qsort function
+    - dispatch tables - tables that contain pointers to functions to be called, example: a table that contains command names and a pointer to the function to call for a command, whenever a user enters a command can invoke corresponding function
+    - callbacks
+    - late-binding
+    - replace switch/if
+    - menu driven programs
+
+  pointer to a function stores the address for the start of function code
+    need number and type of arguments - whole function signature
+    a function pointers holds an address and must define a prototype
+    dereference to use
+
+  Declaration of function pointer
+    <return type> (*myfuncPtr) (<paremeter types>);
+    int (*pfunc) (int);
+
+  Assignment
+    int lookup(int);
+    pfunc = lookup; //pfunc = &lookup; same thing
+
+  Invoking
+    int value = pfunc(5); //use func pointer name just like a func name to call the function, no deref op required
+
+  Can use typedef with function pointers
+    typedef int (*funcPtr)(); //funcPtr is now a synonum for the type of a pointer to a function that takes no arguments and returns an integer
+
+    funcPtr testvar;
+
+
+  Pointer to a function vs function returning a pointer
+  Function returning pointer to int
+    int *func(int a, int b;
+  pointer to a function return int
+    int (*func)(int a, int b);
 
 Void Pointers
+  represents the absence of type
+  can point to var of any type
+  void *pntr
+  size is similar to char type
+  cannot directly deref, have to cast to a concrete data type
+  
+  void *vp;
+  int a = 100;
+  vp = &a;
+  printf("%d", *vp); //wont work
+  
+  have to do
+  
+  printf("%d", *(int*)vp);
+  
