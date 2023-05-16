@@ -1,1 +1,67 @@
+C IO 
+  stdin - standard input, normally associated with terminal window
+  stdout - standar output, normally associated with termial window
+  stderr - error messages written by system, normally associated with terminal window
 
+Char Functions
+  getc() - read a single char from a file
+    int fgetc(FILE *stream);
+    can return a special value of EOF, indicates end of file
+    
+    FILE *file = fopen("data", "r");
+    
+    int i = 0;
+    
+    i = getc(file);
+    
+    while (i != EOF) {
+        printf("%d ", i - '0');
+        i = getc(file);
+    }
+   
+    fclose(file);
+    
+    ch = getc(stdin) // can read in from user
+    
+  getchar() - like getc() but only can read from stdin
+    int getchar(void);
+    
+    printf("%c\n", getchar());
+    
+    //can use getchar() with EOF and a keyboard EOF ctrl-d or ctrl-z to simulate end of file
+    
+    int ch = 0;
+    
+    while ((ch = getchar()) != EOF) { printf("%c\n", ch); }
+    
+  fgetc() - reads char from a file and moves file pointer position 
+    int fgetc(FILE *stream);
+    
+    FILE *fp = NULL;
+    
+    fp = fopen("file", "r")
+    
+    int i;
+    
+    while (1) {
+      i = fgetc(fp);
+      
+      if (i == EOF) { break;}
+      
+      printf("%d", i);
+    }
+    
+    fclose(fp)
+    
+  ungetc() - put char just read back into the input stream, read input char by char, but dont know how many make up unit
+    int ungetc(int ch, FILE* stream);
+    
+    char ch = 0;
+    while (isspace(ch = (char)getchar())); //read as long as there are spaces
+    ungetc(ch, stdin); //put back the non space char
+    printf("%c\n", getchar()); 
+    
+
+String Functions
+
+Formatting Functions
