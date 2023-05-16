@@ -39,6 +39,11 @@ int main (){
         printf("5 - Quit\n");
         scanf("%d", &choice);
         
+        if(choice < 1 || choice > 5) {
+            printf("ERROR: INVALID SELECTION");
+            continue;
+        }
+        
         if (choice == 5) {
             running = 0;
         } else {
