@@ -52,7 +52,7 @@ Char Functions
     }
     
     fclose(fp)
-    
+     
   ungetc() - put char just read back into the input stream, read input char by char, but dont know how many make up unit
     int ungetc(int ch, FILE* stream);
     
@@ -61,7 +61,69 @@ Char Functions
     ungetc(ch, stdin); //put back the non space char
     printf("%c\n", getchar()); 
     
-
+  putc() - write a single character to a file, writes a newline
+    int putc(int char, FILE *stream);
+    
+    int ch = 0;
+    
+    FILE *fp = NULL;
+    FILE *fp2 = NULL;
+    
+    fp = fopen("data", "r");
+    fp2 = fopen("data2", "w");
+    
+    ch = getc(fp);
+    
+    while (ch != EOF) {
+      putc(ch, fp2);
+      ch = getc(fp);
+    }
+    
+    fclose(fp);
+    fclose(fp2);
+    
+  putchar() - goes to stdout
+    int putchar(int c);
+    
+    //parses out newline
+    char string[] = "Hello World, \nHello Jake";
+    
+    int i = 0;
+    
+    while (string[i] != '\0') {
+      if (string[i] != '\n') {
+        putchar(string[i]);
+      }
+      i++;
+    }
+    
+    //like concatenation
+    int ch;
+    
+    while ((ch = getchar()) != EOF){
+      putchar(ch);
+    }
+    
+    ungetc(ch, stdin);
+    
+    printf(" Thank you\n");
+  
+  fputc() = writes single char at a time into a file, moves file position
+    int fputc(int char, FILE *stream);
+    
+    FILE *fp = NULL;
+    
+    char c = '\0';
+    
+    fp = fopen("file", "w");
+    
+    for (c = 'A'; c <= 'Z'; c++) {
+      fputc(c, fp);
+      //fputc(c, stdout);
+    }
+    
+    fclose(fp);
+  
 String Functions
 
 Formatting Functions
