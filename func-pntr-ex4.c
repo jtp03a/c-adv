@@ -15,7 +15,7 @@ int divideOp(int a, int b) { return ( a / b ); }
 
 typedef int (*OpFuncPtr)(int, int); 
 
-int performOp(int *arr1, int *arr2, int size, OpFuncPtr operation);
+void performOp(int *arr1, int *arr2, int size, OpFuncPtr operation);
 void printResult(int *result, int size);
 void resultArray(int **result, int size);
 
@@ -55,15 +55,19 @@ void resultArray(int **result, int size) {
 }
 
 void printResult(int *result, int size) {
+    if ( result == NULL ) {return;}
+    
     for (int i = 0; i < size; i++) {
         printf("%d ", result[i]);
     }
     printf("\n");
 }
 
-int performOp(int *arr1, int *arr2, int size, OpFuncPtr operation) {
+void performOp(int *arr1, int *arr2, int size, OpFuncPtr operation) {
     int *result = NULL;
     resultArray(&result, size);
+    
+    if (result == NULL) {return;}
     
     for (int i = 0; i < size; i++) {
         result[i] = operation(arr1[i], arr2[i]);
