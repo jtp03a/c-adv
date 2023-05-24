@@ -87,6 +87,19 @@ Interprocess Communication (IPC)
   kill() sends sig to specific process
   
 Handling Signals
+  Signals that cannot be ignored/handled/caught - SIGKILL, SIGABRT, SIGSTOP
+  Can "handle" a signal by running own code when rx a signal
+  Signal Actions - default, handle, ignore
+  signal.h - signal library
+  
+  signal() - tells the os which function should call when signal is sent to a process
+    pass the handler function name to the signal() funct as a param
+    two args - int signal num and pointer to the signal handler func
+    returns on success the addr of a func that takes a int arg with no return value
+      on error SIG_ERR
+      
+    typedef void(*sighandler_t)(int)
+    sighandler_t signal(int signum, sighandler_t handler);
   
   
   
