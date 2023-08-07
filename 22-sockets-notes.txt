@@ -66,17 +66,17 @@ Socket Steps -
       connect() - int connect(int sockfd, struct sockaddr *serv_addr, int addrlen) - sockaddr - struct that contains dest IP address and port, addrlen - sizeof(struct sockaddr), returns 0 on success -1 on error
       bind() - tells os what port server is using
         int bind(int sockfd, struct sockaddr *my_addr; int addrlen); my_addr - sockaddr struct that contains the local IP addr and port - 0 for port num means sys will choose random port, INADDR_ANY for IP addr means server IP will be assigned automatically
-      listen() - 
-      accept()
-      read()
-      recv()
-      recvfrom()
+      listen() - int listen(int socketfd, int max_connections)
+      accept() - int accept(int socketfd, struc sockaddr *clientaddr, socklen_t *addrlen);
+      read() - int read(int filedes, const void *buf, int nbytes);
+      recv() - int recv(int sockfd, void *buf, int len, int flags); returns num bytes read into buffer
+      recvfrom() - 
       recvmsg()
-      write()
-      send()
+      write() - int write(int filedes, const void *buf, int nybte); - returns num bytes written, -1 eror
+      send() - int send(int sockfd, const void *msg, int len, int flags);
       sento()
-      sendmsg()
-      close()
-      shutdown()
+      sendmsg() -  
+      close() - int close(int sockfd);
+      shutdown() - gracefully close communication, int shutdown(int sockfd, int how);
     
 
