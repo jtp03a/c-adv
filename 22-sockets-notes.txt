@@ -1,0 +1,80 @@
+TCP protocol - Transmission Control Protocol - works with Internet Protocol - define how computers send packets
+Connection-oriented protocol - conn est and mx until app has finished - keeps connection alive until no longer needed
+Handles lost packets
+handles packet seq
+handles dup packets
+full duplix
+flow control
+congestion control
+
+Client/Server Model 
+Client reqeusts a service or resource from another program (server)
+Two processes that communicate with each other
+Client est connection, client needs to know server addr
+Once server fulfilled client req, then conn terminated
+connections are asyncronous
+Iterative Server - take one client req at a time
+Concurrent Server - multiple concurrent processes - fork a process for each connection
+Sockets - virtual endpoints of comm between computers
+Server - listener cocket
+Socket Steps -
+  create new socket
+  attach local addr to socket (bind)
+  willingness to accept connections (listen)
+  block until conn req arrives (accept)
+  est conn (connect)
+  send data over conn (send)
+  rx data over conn (receive)
+  close conn (close)
+
+  Socket API
+    header file - 
+      sys/types.h - socket call data types
+      sys/socket.h - socket definitions
+      netinet/in.h - constants for internet domain addr
+      netdb.h - hostent
+      arpa/inet.h
+
+    Ports - 1024 - 65535
+      < 1024 - well known system ports
+      port assignments /etc/services
+
+    inet_aton - convert address to network address
+    in_addr_t - convert string addr to integer
+
+    Socket Programmming Structures
+      sockaddr - socket info
+        sa_family - AF_INET
+        sa_data - port number ip addr -sockaddr_in struct
+
+      sockaddr_ in - socket elements
+        sin_family
+        sin_port 
+        sin_addr - struct with s_addr - 32 bit netid/hostid
+        sin_zero[0]
+
+      hostent - host related info
+        h_name
+        h_alisas
+        h_addrtype
+        h_length
+        h_addr_list
+
+    Socket Functions
+      socket()
+      connect()
+      bind()
+      listen()
+      accept()
+      read()
+      recv()
+      recvfrom()
+      recvmsg()
+      write()
+      send()
+      sento()
+      sendmsg()
+      close()
+      shutdown()
+    
+
