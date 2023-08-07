@@ -61,10 +61,12 @@ Socket Steps -
         h_addr_list
 
     Socket Functions
-      socket()
-      connect()
-      bind()
-      listen()
+      socket() - int socket(int family, int type, int protocol); returns fd or -1 on error
+        int setsocketopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen); - manipulates socket options for the fd returned by socket()
+      connect() - int connect(int sockfd, struct sockaddr *serv_addr, int addrlen) - sockaddr - struct that contains dest IP address and port, addrlen - sizeof(struct sockaddr), returns 0 on success -1 on error
+      bind() - tells os what port server is using
+        int bind(int sockfd, struct sockaddr *my_addr; int addrlen); my_addr - sockaddr struct that contains the local IP addr and port - 0 for port num means sys will choose random port, INADDR_ANY for IP addr means server IP will be assigned automatically
+      listen() - 
       accept()
       read()
       recv()
